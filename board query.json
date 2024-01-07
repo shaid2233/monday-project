@@ -1,0 +1,14 @@
+query {
+    boards(ids: 1258969323) {
+      name
+      groups {
+        id
+        title
+        items {
+          id
+          name
+        }
+      }
+    }
+  }
+  

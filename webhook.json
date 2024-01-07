@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/json" -d '{"test": "data"}' http://localhost:5001/webhook

@@ -1,0 +1,16 @@
+import json
+
+# Creating a new JSON file with the provided content
+json_content = {
+    "apiKey": "eyJhbGciOiJIUzI1NiJ9.eyJ0aWQiOjMwNTc5NjI0MCwiYWFpIjoxMSwidWlkIjo0ODAyMDIyMSwiaWFkIjoiMjAyNC0wMS0wMVQxNDozODowNC4wMDBaIiwicGVyIjoibWU6d3JpdGUiLCJhY3RpZCI6MTg1MTU3MzksInJnbiI6ImV1YzEifQ.Rb509K9gkxYaFh2IoZYRq8uQKYoNgOZekepaJcryAIQ",
+    "apiUrl": "https://api.monday.com/v2/boards",
+    "query": "{ boards (limit:10) {name id} }"
+}
+
+# Saving the JSON content to a file
+file_path = '/mnt/data/monday_api_config.json'
+with open(file_path, 'w') as file:
+    json.dump(json_content, file)
+
+file_path
+
