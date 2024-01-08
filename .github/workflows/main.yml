@@ -1,0 +1,25 @@
+name: Run Python Script Every Minute
+
+on:
+  schedule:
+    # Runs at the start of every minute
+    - cron: '* * * * *'
+
+jobs:
+  execute-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9' # or any version you prefer
+
+    - name: Install dependencies (if any)
+      run: pip install -r requirements.txt # if you have a requirements.txt file
+
+    - name: Run the script
+      run: python path/to/your/script.py # replace with the actual path to your Python script
