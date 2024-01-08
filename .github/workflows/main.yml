@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs at the start of every minute
     - cron: '* * * * *'
+  workflow_dispatch:
 
 jobs:
   execute-python-script:
