@@ -23,4 +23,4 @@ jobs:
       run: pip install -r requirements.txt # if you have a requirements.txt file
 
     - name: Run the script
-      run: change the deal from the status.py # replace with the actual path to your Python script
+      run: monday automation.py # replace with the actual path to your Python script
