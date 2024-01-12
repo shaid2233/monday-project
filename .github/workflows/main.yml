@@ -1,25 +1,26 @@
-name: Run Python Script Every Minute
+name: Python Script Automation
 
 on:
-  schedule:
-    - cron: '* * * * *'
-  workflow_dispatch:
+  push:
+    branches: [ main ]
+  # You can also trigger on pull requests, releases, etc.
 
 jobs:
-  execute-python-script:
+  run-python-script:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Check out repository
       uses: actions/checkout@v2
 
-    - name: Set up Python environment
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11' # Specify the Python version
+        python-version: '3.11'
 
     - name: Install dependencies
-      run: pip install -r requirements.txt # If you have a requirements.txt file
+      run: |
+        pip install -r requirements.txt  # If you have dependencies
 
-    - name: Run the script
-      run: python "monday automation.py" # Use quotes if the script name contains spaces
+    - name: Run Python script
+      run: python ./monday project/map services/test5.py
