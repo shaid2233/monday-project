@@ -1,0 +1,26 @@
+name: Python Script Automation
+
+on:
+  push:
+    branches: [ main ]
+  # You can also trigger on pull requests, releases, etc.
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # If you have dependencies
+
+    - name: Run Python script
+      run: test5.py

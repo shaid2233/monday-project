@@ -2,7 +2,6 @@ name: Run Python Script Every Minute
 
 on:
   schedule:
-    # Runs at the start of every minute
     - cron: '* * * * *'
   workflow_dispatch:
 
@@ -17,10 +16,10 @@ jobs:
     - name: Set up Python environment
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11' # or any version you prefer
+        python-version: '3.11' # Specify the Python version
 
-    - name: Install dependencies (if any)
-      run: pip install -r requirements.txt # if you have a requirements.txt file
+    - name: Install dependencies
+      run: pip install -r requirements.txt # If you have a requirements.txt file
 
     - name: Run the script
-      run: monday automation.py # replace with the actual path to your Python script
+      run: python "monday automation.py" # Use quotes if the script name contains spaces
