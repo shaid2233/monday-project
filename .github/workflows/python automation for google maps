@@ -3,7 +3,7 @@ name: Python Script Automation
 on:
   push:
     branches: [ main ]
-  # You can also trigger on pull requests, releases, etc.
+  workflow_dispatch:
 
 jobs:
   run-python-script:
