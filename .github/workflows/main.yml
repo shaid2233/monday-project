@@ -23,4 +23,4 @@ jobs:
         pip install -r requirements.txt  # If you have dependencies
 
     - name: Run Python script
-      run: python "./map services/test5.py"
+      run: python "./map services/test6.py"
