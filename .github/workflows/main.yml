@@ -1,9 +1,9 @@
 name: Python Script Automation
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
-  workflow_dispatch:
+    types: [opened, closed, synchronize, reopened]
 
 jobs:
   run-python-script:
@@ -17,6 +17,14 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # If you have dependencies
+
+    - name: Run Python script
+      run: python "./map services/test6.py"
+
 
     - name: Install dependencies
       run: |
